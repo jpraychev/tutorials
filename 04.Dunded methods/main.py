@@ -11,14 +11,14 @@ class Employee:
         self.__index = 0
 
     def __str__(self):
-        return self.name
+        return f'{self.name}:{self.position}:{self.salary}'
 
     def __len__(self):
         return len(self.__iter_data)
 
     def __add__(self, other):
         return self.salary + other.salary
-    
+
     def __sub__(self, other):
         return self.salary - other.salary
         
@@ -34,17 +34,9 @@ class Employee:
             raise StopIteration
     
     def __contains__(self, item):
-        if item in f'{self.name}:{self.position}:{self.salary}':
+        if item in str(self):
             return True
         return False
 
     def __call__(self):
         print('Calling call() method on object')
-    
-
-
-
-e1 = Employee('John Doe', 'Engineer', 1000)
-e2 = Employee('Jane Doe', 'Developer', 1500)
-
-print('engineer' in e1)
