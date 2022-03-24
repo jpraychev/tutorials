@@ -23,6 +23,12 @@ class Queue():
 
 q = Queue()
 
+q.enqueue('a')
+q.enqueue('b')
+q.enqueue('c')
+
+print(q)
+
 '''
 time_enqueue = []
 time_dequeue = []
