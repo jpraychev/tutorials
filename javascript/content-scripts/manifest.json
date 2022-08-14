@@ -1,0 +1,11 @@
+{
+    "content_scripts": [{
+       "all_frames": true,
+       "js": ["content.js"],
+       "matches": ["https://example.com/"]
+    }],
+    "description": "Content script tutorial",
+    "manifest_version": 3,
+    "name": "browser-extension",
+    "version": "1.0.0"
+ }
