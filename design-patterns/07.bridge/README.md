@@ -17,7 +17,7 @@ If we were to build a software system that uses purely inheritance aka no bridge
 The diagram represents the relationship between a base class called Vehicle and its child classes that inherit from it. Each child class must implement at least a `color()` method and additional methods (if needed) to better describe the class being created (car can have an engine, while the bike does not). As seen from above, there are lot of elements that are being duplicated and quite a lot of classes to implement something basic. On top of that, if we were to add more classes (another type of vehicle), we would need to create another class and subclass it.
 
 ## Example with bridge pattern
-The bridge pattern tries to solve the issue by creating separate classes or hierarcies so that, the original class (Vehicle in our case) will later composed of those new classes (Color() in our case). The hierarchical structure of the bridge pattern is presented below.
+The bridge pattern tries to solve the issue by creating separate classes or hierarchies so that, the original class (Vehicle in our case) will later composed of those new classes (Color() in our case). The hierarchical structure of the bridge pattern is presented below.
 
 ![Without bridge pattern](assets/bridge-pattern.png)
 
@@ -47,7 +47,7 @@ class Vehicle(ABC):
         ...
 ```
 
-Here, we've got the `Vehicle()` and `Color()` classes inheriting from ABC. The `Color()` class needs to implement a single paint method, while the Vehicle class accepts a single parameter during instance creation (`Color()`) and needs to implement an apply method for that particular color. If you've noticed, the `init` method of `Vehicle()` uses type anotation to explicitly denote that a instance of `Color()` class has to be supplied to it.
+Here, we've got the `Vehicle()` and `Color()` classes inheriting from ABC. The `Color()` class needs to implement a single paint method, while the Vehicle class accepts a single parameter during instance creation (`Color()`) and needs to implement an apply method for that particular color. If you've noticed, the `init` method of `Vehicle()` uses type annotation to explicitly denote that a instance of `Color()` class has to be supplied to it.
 
 Now that we have abstract classes, we can move to implementation. For the `Color()` class we could define the following.
 
@@ -99,7 +99,7 @@ To avoid this error, we firstly need to create the color instance and pass it to
 Painting using Blue color
 ```
 
-Now that we have such structure, we can simply add new vehicles or colors with minimal to no modification of the existing code base. This approach follows one of SOLID's principles (Open-Closed Principle) which states that `classes should be open for extension and closed to modification.` For example, define new color (`Green()`) is simple as adding a new sublcass.
+Now that we have such structure, we can simply add new vehicles or colors with minimal to no modification of the existing code base. This approach follows one of SOLID's principles (Open-Closed Principle) which states that `classes should be open for extension and closed to modification.` For example, defining a new color (`Green()`) is simple as adding a new subclass.
 
 ```
 class Green(Color):
